@@ -1,0 +1,33 @@
+version: '3.9'
+
+services:
+  fastapi_app:
+    build:
+      context: .
+      dockerfile: Dockerfile.fastapi
+    ports:
+      - "8000:8000"
+    environment:
+      - SERVER_IP=0.0.0.0
+      - SERVER_PORT=44445
+    volumes:
+      - .:/app
+    # depends_on:
+    #   - tcp_server
+
+  # tcp_server:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile.tcp
+  #   ports:
+  #     - "44445:44445"
+  #   environment:
+  #     - SERVER_IP=0.0.0.0
+  #     - SERVER_PORT=44445
+  #   volumes:
+  #     - .:/app
+  #   healthcheck:
+  #     test: ["CMD", "curl", "-f", "http://0.0.0.0:44445"]  # Modify to your TCP server's health endpoint
+  #     interval: 30s
+  #     timeout: 10s
+  #     retries: 5
