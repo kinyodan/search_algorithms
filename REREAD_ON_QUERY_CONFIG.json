@@ -1,0 +1,8 @@
+{
+    "files": {
+        "200k": {
+            "file_path": "./200k.txt",
+            "reread_on_query": true
+        }
+    }
+}

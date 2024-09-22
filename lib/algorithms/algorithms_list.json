@@ -1,0 +1,18 @@
+{
+    "algorithms": [
+        "linear",
+        "binary",
+        "hash_table",
+        "inverted_index",
+        "ternary",
+        "graph",
+        "jump",
+        "trie",
+        "fibonacci",
+        "exponential",
+        "interpolation",
+        "quick_select",
+        "shell",
+        "tim"
+    ]
+}
