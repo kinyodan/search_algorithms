@@ -1,0 +1,33 @@
+DEBUG: Unexpected error: [Errno 98] Address already in use
+DEBUG: Server socket closed.
+DEBUG: Server running on 0.0.0.0:44445
+DEBUG: Unexpected error: [Errno 22] Invalid argument
+DEBUG: Server socket closed.
+DEBUG: Server running on 0.0.0.0:44445
+DEBUG: Unexpected error: [Errno 22] Invalid argument
+DEBUG: Server socket closed.
+DEBUG: Server running on 0.0.0.0:44445
+DEBUG: Unexpected error: [Errno 22] Invalid argument
+DEBUG: Server socket closed.
+DEBUG: Server running on 0.0.0.0:44445
+DEBUG: Unexpected error: [Errno 22] Invalid argument
+DEBUG: Server socket closed.
+DEBUG: Server running on 0.0.0.0:44445
+DEBUG: Unexpected error: [Errno 22] Invalid argument
+DEBUG: Server socket closed.
+DEBUG: Server running on 0.0.0.0:44445
+DEBUG: Unexpected error: [Errno 22] Invalid argument
+DEBUG: Server socket closed.
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+AttributeError: module 'server' has no attribute 'run'
+  File "<string>", line 1
+    import os; os.environ['SSL_PASSPHRASE'] = 'quant analysis'; server.py )
+                                                                          ^
+SyntaxError: unmatched ')'
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+TypeError: start_server() missing 4 required positional arguments: 'host', 'port', 'data_file_path', and 'use_ssl'
+DEBUG: Server running on 0.0.0.0:44445
+DEBUG: Unexpected error: [Errno 22] Invalid argument
+DEBUG: Server socket closed.

@@ -1,0 +1,28 @@
+{
+    "files": {
+        "200k": {
+            "file_path": "./200k.txt",
+            "reread_on_query": true
+        },
+        "test_file_10000": {
+            "file_path": "./metrics/test_file_10000.txt",
+            "reread_on_query": true
+        },
+        "test_file_50000": {
+            "file_path": "./metrics/test_file_50000.txt",
+            "reread_on_query": true
+        },
+        "test_file_100000": {
+            "file_path": "./metrics/test_file_100000.txt",
+            "reread_on_query": true
+        },
+        "test_file_500000": {
+            "file_path": "./metrics/test_file_500000.txt",
+            "reread_on_query": true
+        },
+        "test_file_1000000": {
+            "file_path": "./metrics/test_file_1000000.txt",
+            "reread_on_query": true
+        }
+    }
+}
