@@ -1,6 +1,8 @@
 from typing import List
 
-def binary_search(arr: List[str], target: str, left: int, right: int) -> bool:
+
+def binary_search(arr: List[str],
+                  target: str, left: int, right: int) -> bool:
     """
     Perform a binary search on a sorted array.
 
@@ -17,9 +19,6 @@ def binary_search(arr: List[str], target: str, left: int, right: int) -> bool:
     while left <= right:
         mid = (left + right) // 2
         current_string = arr[mid].strip()  # Strip the current string
-        # Debugging output
-        print(f"Binary search: left={left}, right={right}, mid={mid}, checking='{current_string}' against '{target}'")
-        print(f"Lengths: len(current)={len(current_string)}, len(target)={len(target)}")  # Debugging lengths
         if current_string == target:
             return True
         elif current_string < target:
@@ -43,7 +42,6 @@ def exponential_search(arr: List[str], target: str) -> bool:
     # Check if the first element is the target
     if arr[0] == target:
         return True
-    
     # Find the range for binary search by doubling the index
     index = 1
     while index < len(arr) and arr[index] <= target:
@@ -51,6 +49,7 @@ def exponential_search(arr: List[str], target: str) -> bool:
 
     # Perform binary search in the found range
     return binary_search(arr, target, index // 2, min(index, len(arr) - 1))
+
 
 class GraphBasedSearch:
     def __init__(self, file_path: str, file_content: str) -> None:
@@ -62,7 +61,7 @@ class GraphBasedSearch:
             file_content (str): The content of the file to search in.
         """
         self.file_path = file_path
-        self.file_content = file_content
+        self.file_content = file_content[0]
 
     def load_strings_from_file(self) -> List[str]:
         """
@@ -71,7 +70,8 @@ class GraphBasedSearch:
         Returns:
             List[str]: A list of strings loaded from the file.
         """
-        return self.file_content.strip().split('\n')  # Split the content by lines into a list of strings
+        # Split the content by lines into a list of strings
+        return self.file_content.strip().split('\n')
 
     def search(self, target_string: str) -> str:
         """
@@ -81,10 +81,10 @@ class GraphBasedSearch:
             target_string (str): The string to search for.
 
         Returns:
-            str: "STRING FOUND" if the target string is found, otherwise "STRING NOT FOUND".
+            str: "STRING FOUND" if the target string is found,
+            else "STRING NOT FOUND".
         """
         strings_list = self.load_strings_from_file()
-        
         if not strings_list:  # Check if the list is empty
             print("No strings loaded for searching.")
             return "STRING NOT FOUND"

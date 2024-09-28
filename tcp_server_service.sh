@@ -3,8 +3,8 @@
 case "$1" in
     start)
         # Prompt for the SSL passphrase
-        read -s -p "Enter PEM pass phrase: " ssl_passphrase
-        echo
+        #read -s -p "Enter PEM pass phrase: " ssl_passphrase
+        # echo
 
         # Export the SSL_PASSPHRASE environment variable
         export SSL_PASSPHRASE="$ssl_passphrase"

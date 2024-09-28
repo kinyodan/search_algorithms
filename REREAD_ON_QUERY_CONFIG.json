@@ -23,6 +23,14 @@
         "test_file_1000000": {
             "file_path": "./metrics/test_file_1000000.txt",
             "reread_on_query": true
+        },
+        "test_file_10000000": {
+            "file_path": "./metrics/test_file_10000000.txt",
+            "reread_on_query": true
+        },
+        "test_file_100000000": {
+            "file_path": "./metrics/test_file_100000000.txt",
+            "reread_on_query": true
         }
     }
 }

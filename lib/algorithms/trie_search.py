@@ -1,9 +1,11 @@
 from typing import List, Tuple, Optional
 
+
 class TrieNode:
     def __init__(self) -> None:
         self.children = {}
         self.is_end_of_word = False
+
 
 class TrieSearch:
     def __init__(self, file_path: str, file_content: str) -> None:
@@ -15,7 +17,7 @@ class TrieSearch:
             file_content (str): The content to be inserted into the Trie.
         """
         self.file_path = file_path
-        self.file_content = file_content
+        self.file_content = file_content[0]
         self.root = TrieNode()
         self.build_trie()
 
@@ -41,7 +43,7 @@ class TrieSearch:
             target_string (str): The string to search for.
 
         Returns:
-            Tuple[bool, Optional[str]]: A tuple indicating if the string was found and the string itself.
+            Tuple[bool, Optional[str]]: A tuple indicating if string was found.
         """
         node = self.root
         for char in target_string:

@@ -1,5 +1,6 @@
 {
     "algorithms": [
+        "default",
         "linear",
         "binary",
         "hash_table",
@@ -11,7 +12,6 @@
         "fibonacci",
         "exponential",
         "interpolation",
-        "quick_select",
         "shell",
         "tim"
     ]

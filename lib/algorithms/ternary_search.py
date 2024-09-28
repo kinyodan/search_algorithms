@@ -1,7 +1,8 @@
 from typing import Tuple, List, Optional
 
+
 class TernarySearch:
-    def __init__(self, file_path: str,file_content: str) -> None:
+    def __init__(self, file_path: str, file_content: str) -> None:
         """
         Initialize the TernarySearch instance with the given file path.
 
@@ -9,7 +10,7 @@ class TernarySearch:
             file_path (str): The path to the file containing strings to search.
         """
         self.file_path = file_path
-        self.file_content = file_content
+        self.file_content = file_content[0]
 
     def search(self, target_string: str) -> Tuple[bool, Optional[str]]:
         """
@@ -19,14 +20,16 @@ class TernarySearch:
             target_string (str): The string to search for.
 
         Returns:
-            Tuple[bool, Optional[str]]: A tuple indicating if the string was found
+            Tuple[bool, Optional[str]]: Tuple indicating if string was found
             and the string itself, or None if not found.
         """
 
         words = sorted(self.file_content.split())  # Sort words for searching
         return self.ternary_search(words, target_string, 0, len(words) - 1)
 
-    def ternary_search(self, arr: List[str], target_string: str, left: int, right: int) -> Tuple[bool, Optional[str]]:
+    def ternary_search(self, arr: List[str],
+                       target_string: str, left: int,
+                       right: int) -> Tuple[bool, Optional[str]]:
         """
         Perform ternary search on a sorted array.
 
@@ -37,7 +40,7 @@ class TernarySearch:
             right (int): The right index for the search range.
 
         Returns:
-            Tuple[bool, Optional[str]]: A tuple indicating if the string was found
+            Tuple[bool, Optional[str]]: Tuple indicating if string was found
             and the string itself, or None if not found.
         """
         if left > right:
@@ -48,13 +51,19 @@ class TernarySearch:
         mid2 = right - third_length
 
         if arr[mid1] == target_string:
-            return True, arr[mid1]  # Target found at mid1
+            return True  # Target found at mid1
         if arr[mid2] == target_string:
-            return True, arr[mid2]  # Target found at mid2
+            return True  # Target found at mid2
 
         if target_string < arr[mid1]:
-            return self.ternary_search(arr, target_string, left, mid1 - 1)  # Search in the first third
+            # Search in the first third
+            return self.ternary_search(arr,
+                                       target_string, left, mid1 - 1)
         elif target_string > arr[mid2]:
-            return self.ternary_search(arr, target_string, mid2 + 1, right)  # Search in the last third
+            # Search in the last third
+            return self.ternary_search(arr,
+                                       target_string, mid2 + 1, right)
         else:
-            return self.ternary_search(arr, target_string, mid1 + 1, mid2 - 1)  # Search in the middle third
+            # Search in the middle third
+            return self.ternary_search(arr,
+                                       target_string, mid1 + 1, mid2 - 1)

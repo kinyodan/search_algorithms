@@ -1,27 +1,27 @@
 from typing import List, Tuple, Optional
 
+
 class ShellSearch:
     def __init__(self, file_path: str, file_content: str) -> None:
         """
-        Initialize the ShellSearch instance with the given file path and file content.
+        Initialize ShellSearch instance with given file path and file content.
 
         Args:
             file_path (str): The path to the file containing strings to search.
-            file_content (str): The content to search within (each line as an individual string).
+            file_content (str): The content to search within
+            (each line as an individual string).
         """
         self.file_path = file_path
         # Each line is treated as an individual string
-        self.sorted_lines = file_content.strip().splitlines()
+        self.sorted_lines = file_content[0].strip().split('\n')
 
     def search(self, target_string: str) -> Tuple[bool, Optional[str]]:
         """
         Search for a target string in the sorted lines using shell search.
 
-        Args:
-            target_string (str): The string to search for.
-
+        Args: target_string (str): The string to search for.
         Returns:
-            Tuple[bool, Optional[str]]: A tuple indicating if the string was found and the string itself.
+            Tuple[bool, Optional[str]]: Tuple indicating if string was found.
         """
         # Strip any trailing/leading whitespace from the target string
         target_string = target_string.strip()
@@ -50,8 +50,10 @@ class ShellSearch:
 
             gap //= 2
 
-    def perform_linear_search(self, target_string: str) -> Tuple[bool, Optional[str]]:
-        """Perform a linear search for the target string after sorting."""
+    def perform_linear_search(self,
+                              target_string: str
+                              ) -> Tuple[bool, Optional[str]]:
+        """Perform a linear search for target string after sorting."""
         for line in self.sorted_lines:
             if line.strip() == target_string:
                 return True  # Return the found string

@@ -1,11 +1,16 @@
-
-
 import json
 from typing import List
 
-def set_metrics_data(metric_value: float, target_item: str, algorithms_list: List[str], json_file: str,reread_on_query: bool ):
+
+def set_metrics_data(
+        metric_value: float,
+        target_item: str,
+        algorithms_list: List[str],
+        json_file: str,
+        reread_on_query: bool):
     """
-    Append the metric_value to the 'execution_times' array in the JSON file based on the algorithm's index.
+    Append the metric_value to the 'execution_times'
+    array in the JSON file based on the algorithm's index.
 
     Args:
         metric_value (float): The metric value to append.
@@ -20,24 +25,35 @@ def set_metrics_data(metric_value: float, target_item: str, algorithms_list: Lis
         print(f"DEBUG: Algorithm '{target_item}' not found in the list.")
         return
 
-    # Load the JSON file
-    with open(json_file, 'r+') as f:
-        data = json.load(f)
+    # added to comply with PEP8 standards
+    exec_time_string = f"execution_times_REREAD_ON_QUERY_{reread_on_query}"
 
-        # Ensure 'execution_times' exists in the JSON
-        if f"execution_times_REREAD_ON_QUERY_{reread_on_query}" not in data:
-            data[f"execution_times_REREAD_ON_QUERY_{reread_on_query}"] = []
+    try:
+        # Load the JSON file
+        with open(json_file, 'r+') as f:
+            data = json.load(f)
 
-        # Ensure there are enough sublists in 'execution_times' for the index
-        while len(data[f"execution_times_REREAD_ON_QUERY_{reread_on_query}"]) <= index:
-            data[f"execution_times_REREAD_ON_QUERY_{reread_on_query}"].append([])
+            # Ensure 'execution_times' exists in the JSON
+            if f"{exec_time_string}" not in data:
+                data[exec_time_string] = []
 
-        # Append the metric value to the corresponding algorithm's list
-        data[f"execution_times_REREAD_ON_QUERY_{reread_on_query}"][index].append(metric_value)
+            # Ensure there are enough sublists in 'execution_times' for index
+            while len(
+                    data[exec_time_string]) <= index:
+                data[exec_time_string].append([
+                ])
 
-        # Write the updated data back to the JSON file
-        f.seek(0)  # Go to the start of the file
-        json.dump(data, f, indent=4)
-        f.truncate()  # Ensure the file is properly truncated after updating
+            # Append the metric value to the corresponding algorithm's list
+            data[
+                f"{exec_time_string}"][index].append(
+                metric_value)
 
-    print(f"DEBUG: Metric value {metric_value} added to 'execution_times_REREAD_ON_QUERY_{reread_on_query}' for algorithm '{target_item}' at index {index}.")
+            # Write the updated data back to the JSON file
+            f.seek(0)  # Go to the start of the file
+            json.dump(data, f, indent=4)
+            f.truncate()  # Ensure file is properly truncated after updating
+
+        print(
+            f"DEBUG: Metric value {metric_value} added.")
+    except Exception as error:
+        print(f"DEBUG: problem loading metrics json, or writing to file")

@@ -42,7 +42,8 @@ plt.bar(x_positions, average_execution_times, color='skyblue')
 plt.title('Algorithm Execution Time Comparison')
 plt.xlabel('Algorithms')
 plt.ylabel('Average Execution Time (ms)')
-plt.xticks(x_positions, algorithms, rotation=90)  # Add algorithm names as x-tick labels
+# Add algorithm names as x-tick labels
+plt.xticks(x_positions, algorithms, rotation=90)
 
 # Save as PDF
 plt.tight_layout()  # To avoid label overlap

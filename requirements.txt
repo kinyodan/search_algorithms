@@ -1,7 +1,10 @@
-fastapi
-uvicorn
 python-dotenv
 matplotlib
 pandas
 python-daemon
 configparser
+autopep8
+pycodestyle
+pytest-mock
+pyinotify
+

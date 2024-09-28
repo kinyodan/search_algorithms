@@ -1,33 +1,23 @@
-DEBUG: Unexpected error: [Errno 98] Address already in use
-DEBUG: Server socket closed.
-DEBUG: Server running on 0.0.0.0:44445
-DEBUG: Unexpected error: [Errno 22] Invalid argument
-DEBUG: Server socket closed.
-DEBUG: Server running on 0.0.0.0:44445
-DEBUG: Unexpected error: [Errno 22] Invalid argument
-DEBUG: Server socket closed.
-DEBUG: Server running on 0.0.0.0:44445
-DEBUG: Unexpected error: [Errno 22] Invalid argument
-DEBUG: Server socket closed.
-DEBUG: Server running on 0.0.0.0:44445
-DEBUG: Unexpected error: [Errno 22] Invalid argument
-DEBUG: Server socket closed.
-DEBUG: Server running on 0.0.0.0:44445
-DEBUG: Unexpected error: [Errno 22] Invalid argument
-DEBUG: Server socket closed.
-DEBUG: Server running on 0.0.0.0:44445
-DEBUG: Unexpected error: [Errno 22] Invalid argument
-DEBUG: Server socket closed.
-Traceback (most recent call last):
-  File "<string>", line 1, in <module>
-AttributeError: module 'server' has no attribute 'run'
-  File "<string>", line 1
-    import os; os.environ['SSL_PASSPHRASE'] = 'quant analysis'; server.py )
-                                                                          ^
-SyntaxError: unmatched ')'
-Traceback (most recent call last):
-  File "<string>", line 1, in <module>
-TypeError: start_server() missing 4 required positional arguments: 'host', 'port', 'data_file_path', and 'use_ssl'
-DEBUG: Server running on 0.0.0.0:44445
-DEBUG: Unexpected error: [Errno 22] Invalid argument
-DEBUG: Server socket closed.
+DEBUG:root:DEBUG: Server running on 0.0.0.0:44445
+DEBUG:root:DEBUG: Unexpected error: [Errno 22] Invalid argument
+DEBUG:root:DEBUG: Server socket closed.
+usage: server.py [-h] --ssl-passphrase SSL_PASSPHRASE
+server.py: error: the following arguments are required: --ssl-passphrase
+DEBUG:root:DEBUG: Server running on 0.0.0.0:44445
+DEBUG:root:Running data preloader in DataPreloader
+DEBUG:root:Reading preloader data the file with mmap
+DEBUG:root:updating FileServer at FileServer 
+DEBUG:root:DEBUG: File content updated.
+DEBUG:root:The current file content ln is 5626620
+DEBUG:root:DEBUG: Starting to monitor file...
+DEBUG:root:DEBUG: Connection established with ('127.0.0.1', 49830)
+DEBUG:root:Connected with ('127.0.0.1', 49830)
+DEBUG:root:Search query received: '{"query_string": "23;0;1;26;0;8;3;0;", "algorithm": ""}'
+DEBUG:root:Using default algorithm. REREAD_ON_QUERY: True
+DEBUG:root:Using 'default' algorithm to find '23;0;1;26;0;8;3;0;'
+DEBUG:root:is_file_server_updated?: True 
+DEBUG:root:Reading FileServer content at FileReader
+DEBUG:root:Time taken to read : 0.07 ms
+DEBUG:root:Rereading file content
+DEBUG:root:String found! in Hash map
+DEBUG:root:Query processed in 0.90 ms
