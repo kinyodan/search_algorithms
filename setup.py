@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='algosciences',  # Your package name
+    name='Search algorithms',  # Your package name
     version='1.0.0',  # Version of your package
     description='A package for various search algorithms',  # Brief description
     author='Your Name',  # Author details
